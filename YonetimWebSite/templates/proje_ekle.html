@@ -1,0 +1,12 @@
+{% extends 'projeler.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <h2>Yeni Proje Ekle</h2>
+    <form method="post" action="{% url 'proje_ekle' %}">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit">Kaydet</button>
+        <a href="{% url 'proje_listele' %}" class="btn btn-secondary">Geri Dön</a>
+    </form>
+{% endblock %}

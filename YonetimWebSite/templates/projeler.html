@@ -1,0 +1,14 @@
+{% extends 'inbase.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Projeler</h1>
+    <div class="button-container">
+        <div class="button-link-container">
+            <a href="{% url 'proje_listele' %}" class="button-link">Proje Listele</a>
+        </div>
+        <div class="button-link-container">
+            <a href="{% url 'proje_ekle' %}" class="button-link">Proje Ekle</a>
+        </div>
+    </div>
+{% endblock %}

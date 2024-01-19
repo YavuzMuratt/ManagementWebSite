@@ -1,0 +1,40 @@
+<!-- templates/calisanlar.html -->
+
+{% extends 'inbase.html' %}
+
+{% block content %}
+    <h2>Çalışanlar</h2>
+
+    <!-- Çalışanları listelemek için bir tablo -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kullanıcı Adı</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Atanmış Görevler</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calisan in calisanlar %}
+                <tr>
+                    <td>{{ calisan.id }}</td>
+                    <td>{{ calisan.user.username }}</td>
+                    <td>{{ calisan.ad }}</td>
+                    <td>{{ calisan.soyad }}</td>
+                    <td>
+                        {{ calisan.gorevler }}
+                    </td>
+                    <td>
+                        <a href="{% url 'calisan_detay' calisan.id %}">Detay</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Çalışan ekleme butonu ve formu -->
+    <a href="{% url 'calisan_ekle' %}" class="btn btn-primary">Çalışan Ekle</a>
+{% endblock %}

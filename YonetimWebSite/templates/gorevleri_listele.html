@@ -1,0 +1,33 @@
+<!-- templates/gorevleri_listele.html -->
+
+{% extends 'inbase.html' %}
+
+{% block content %}
+    <h2>Görevler</h2>
+
+    <!-- Görevleri listelemek için bir tablo -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Açıklama</th>
+                <th>Proje</th>
+                <th>Başlangıç Tarihi</th>
+                <th>Bitiş Tarihi</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gorev in gorevler %}
+                <tr>
+                    <td>{{ gorev.id }}</td>
+                    <td>{{ gorev.aciklama }}</td>
+                    <td>{{ gorev.proje.proje_adi }}</td>
+                    <td>{{ gorev.baslangic_tarihi }}</td>
+                    <td>{{ gorev.bitis_tarihi }}</td>
+                    <td>{{ gorev.durum }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

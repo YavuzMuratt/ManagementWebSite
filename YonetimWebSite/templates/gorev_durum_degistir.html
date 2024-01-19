@@ -1,0 +1,12 @@
+<!-- gorev_durum_degistir.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Görev Durumunu Değiştir</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Durumu Güncelle</button>
+  </form>
+{% endblock %}

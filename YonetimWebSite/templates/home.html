@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Proje Yönetim Sistemine Hoşgeldiniz</h1>
+    <div class="button-container">
+        <a href="{% url 'giris' %}" class="button-link">Giriş Yap</a>
+        <a href="{% url 'kayit' %}" class="button-link">Kayıt Ol</a>
+    </div>
+{% endblock %}

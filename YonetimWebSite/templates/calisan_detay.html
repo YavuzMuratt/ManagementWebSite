@@ -1,0 +1,34 @@
+<!-- templates/calisan_detay.html -->
+
+{% extends 'inbase.html' %}
+
+{% block content %}
+    <h2>Çalışan Detayları</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Kullanıcı Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ calisan.id }}</td>
+                <td>{{ calisan.ad }}</td>
+                <td>{{ calisan.soyad }}</td>
+                <td>{{ calisan.user.username }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Atanmış Görevler</h3>
+
+    <ul>
+        {% for gorev in calisan.gorev_set.all %}
+            <li>{{ gorev.isim }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

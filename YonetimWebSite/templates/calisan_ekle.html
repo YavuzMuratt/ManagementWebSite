@@ -1,0 +1,20 @@
+<!-- templates/calisan_ekle.html -->
+
+{% extends 'inbase.html' %}
+
+{% block content %}
+    <h2>Çalışan Ekle</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+
+    <h3>Oluşturulmuş Görevler</h3>
+    <ul>
+        {% for gorev in gorevler %}
+            <li>{{ gorev.aciklama }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

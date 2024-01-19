@@ -1,0 +1,11 @@
+{% extends 'inbase.html' %}
+
+{% block content %}
+    <h2>Görev Ekle</h2>
+    <form method="post" action="{% url 'gorev_ekle' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Görev Ekle</button>
+    </form>
+    <a href="{% url 'gorevleri_listele' %}">Görevleri Listele</a>
+{% endblock %}

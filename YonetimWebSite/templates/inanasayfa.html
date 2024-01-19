@@ -1,0 +1,28 @@
+<!-- templates/home.html -->
+{% extends 'inbase.html' %}
+{% load static %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <div class="welcome-container">
+        <img src="{% static 'oficimg.png' %}" alt="Welcome Image">
+        <h2>Hoş geldiniz, {{ kullanici_adi }}!</h2>
+
+        <!-- İstatistikler burada -->
+
+        <h3>Projeler:</h3>
+        <ul>
+            {% for proje in projeler %}
+                <li>{{ proje.proje_adi }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Sistem Logu:</h3>
+        <ul>
+            {% for log in loglar %}
+                <li>{{ log.mesaj }} - {{ log.tarih }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

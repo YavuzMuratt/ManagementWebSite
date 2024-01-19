@@ -1,0 +1,19 @@
+<!-- kayit.html -->
+
+{% extends 'home.html' %}
+
+{% block title %}Kayıt Ol{% endblock %}
+
+{% block content %}
+    <div id="content" class="center-content">
+        <h2>Kayıt Ol</h2>
+
+        <form method="post" action="{% url 'kayit' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button-link">Kayıt Ol</button>
+        </form>
+
+        <p>Zaten bir hesabınız var mı? <a href="{% url 'giris' %}" class="link">Giriş Yap</a></p>
+    </div>
+{% endblock %}
